@@ -7,7 +7,146 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initMusicToggle();
   initScrollAnimations();
+  initLanguageToggle();
 });
+
+/* ============================================
+   LANGUAGE TRANSLATIONS
+   ============================================ */
+const translations = {
+  en: {
+    langBtn: 'हिन्दी',
+    ganeshText: 'Shree Ganeshaya Namah',
+    groomFamily: "Groom's Family",
+    groomParents: "Shri. Father's Name & Smt. Mother's Name",
+    brideFamily: "Bride's Family",
+    brideParents: "Shri. Father's Name & Smt. Mother's Name",
+    coupleIntro: 'Request the pleasure of your company at the wedding of',
+    saveDate: 'Save the Date',
+    monthYear: 'Month YYYY',
+    dayName: 'Day',
+    muhurat: 'Shubh Muhurat',
+    countdownLabel: 'Counting Down To The Big Day',
+    days: 'Days',
+    hours: 'Hours',
+    minutes: 'Minutes',
+    seconds: 'Seconds',
+    venueLabel: 'Wedding Venue',
+    venueName: 'Venue Name Here',
+    mapBtn: '📍 View on Map',
+    ceremoniesTitle: 'Wedding Ceremonies',
+    haldi: 'Haldi',
+    sangeet: 'Sangeet',
+    baraat: 'Baraat',
+    pheras: 'Pheras',
+    reception: 'Reception',
+    vidaai: 'Vidaai',
+    eventTiming1: 'Date & Time',
+    eventTiming2: 'Date & Time',
+    eventTiming3: 'Date & Time',
+    eventTiming4: 'Date & Time',
+    eventTiming5: 'Date & Time',
+    eventTiming6: 'Date & Time',
+    closingBlessing: '~ With Love & Blessings ~',
+    rsvpText: 'For any queries, please contact',
+  },
+  hi: {
+    langBtn: 'English',
+    ganeshText: 'श्री गणेशाय नमः',
+    groomFamily: 'वर पक्ष',
+    groomParents: 'श्री. पिता का नाम एवं श्रीमती. माता का नाम',
+    brideFamily: 'कन्या पक्ष',
+    brideParents: 'श्री. पिता का नाम एवं श्रीमती. माता का नाम',
+    coupleIntro: 'आपको हमारे परिवार के शुभ विवाह समारोह में सादर आमंत्रित करते हैं',
+    saveDate: 'तिथि सुरक्षित करें',
+    monthYear: 'माह वर्ष',
+    dayName: 'दिन',
+    muhurat: 'शुभ मुहूर्त',
+    countdownLabel: 'शुभ दिन की उलटी गिनती',
+    days: 'दिन',
+    hours: 'घंटे',
+    minutes: 'मिनट',
+    seconds: 'सेकंड',
+    venueLabel: 'विवाह स्थल',
+    venueName: 'स्थल का नाम यहाँ',
+    mapBtn: '📍 मानचित्र पर देखें',
+    ceremoniesTitle: 'विवाह संस्कार',
+    haldi: 'हल्दी',
+    sangeet: 'संगीत',
+    baraat: 'बारात',
+    pheras: 'फेरे',
+    reception: 'स्वागत समारोह',
+    vidaai: 'विदाई',
+    eventTiming1: 'तिथि एवं समय',
+    eventTiming2: 'तिथि एवं समय',
+    eventTiming3: 'तिथि एवं समय',
+    eventTiming4: 'तिथि एवं समय',
+    eventTiming5: 'तिथि एवं समय',
+    eventTiming6: 'तिथि एवं समय',
+    closingBlessing: '~ स्नेह एवं आशीर्वाद सहित ~',
+    rsvpText: 'किसी भी जानकारी के लिए संपर्क करें',
+  }
+};
+
+// HTML-based translations (contain <br> or <span> tags)
+const htmlTranslations = {
+  en: {
+    blessingText: 'With the blessings of Lord Ganesha &amp; our beloved elders,<br>we cordially invite you to celebrate the auspicious occasion of the marriage of<span class="sanskrit">|| शुभ विवाह ||</span>',
+    groomAddress: 'Family Address Line 1<br>City, State',
+    brideAddress: 'Family Address Line 1<br>City, State',
+    groomName: 'Groom<span class="role-label">The Groom</span>',
+    brideName: 'Bride<span class="role-label">The Bride</span>',
+    venueAddress: 'Full Address Line 1,<br>City, State — PIN Code',
+    closingMsg: 'Your gracious presence and blessings will make this occasion even more memorable.<br>We look forward to celebrating this joyous occasion with you!',
+  },
+  hi: {
+    blessingText: 'श्री गणेश जी एवं हमारे पूज्य बड़ों के आशीर्वाद से,<br>हम आपको इस शुभ विवाह के अवसर पर सादर आमंत्रित करते हैं<span class="sanskrit">|| शुभ विवाह ||</span>',
+    groomAddress: 'पारिवारिक पता पंक्ति 1<br>शहर, राज्य',
+    brideAddress: 'पारिवारिक पता पंक्ति 1<br>शहर, राज्य',
+    groomName: 'वर<span class="role-label">दूल्हा</span>',
+    brideName: 'कन्या<span class="role-label">दुल्हन</span>',
+    venueAddress: 'पूरा पता पंक्ति 1,<br>शहर, राज्य — पिन कोड',
+    closingMsg: 'आपकी शुभ उपस्थिति एवं आशीर्वाद इस अवसर को और भी यादगार बना देंगे।<br>हम इस शुभ अवसर को आपके साथ मनाने के लिए उत्सुक हैं!',
+  }
+};
+
+let currentLang = 'en';
+
+/* ---- Language Toggle ---- */
+function initLanguageToggle() {
+  const btn = document.getElementById('langToggle');
+
+  btn.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
+    applyTranslations(currentLang);
+
+    // Update html lang attribute
+    document.documentElement.lang = currentLang;
+
+    // Update button title
+    btn.title = currentLang === 'en' ? 'Switch to Hindi' : 'Switch to English';
+  });
+}
+
+function applyTranslations(lang) {
+  // Text-only translations (textContent)
+  const textEls = document.querySelectorAll('[data-i18n]');
+  textEls.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // HTML translations (innerHTML - for elements with <br> or nested tags)
+  const htmlEls = document.querySelectorAll('[data-i18n-html]');
+  htmlEls.forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (htmlTranslations[lang] && htmlTranslations[lang][key] !== undefined) {
+      el.innerHTML = htmlTranslations[lang][key];
+    }
+  });
+}
 
 /* ---- Floating Flower Petals ---- */
 function initPetals() {
