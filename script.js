@@ -23,8 +23,8 @@ const translations = {
     brideParents: "Shri. Father's Name & Smt. Mother's Name",
     coupleIntro: 'Request the pleasure of your company at the wedding of',
     saveDate: 'Save the Date',
-    monthYear: 'Month YYYY',
-    dayName: 'Day',
+    monthYear: 'February 2026',
+    dayName: 'Thursday',
     muhurat: 'Shubh Muhurat',
     countdownLabel: 'Counting Down To The Big Day',
     days: 'Days',
@@ -46,7 +46,7 @@ const translations = {
     eventTiming3: 'Date & Time',
     eventTiming4: 'Date & Time',
     eventTiming5: 'Date & Time',
-    eventTiming6: 'Date & Time',
+    eventTiming6: '20th Feb, 2026',
     closingBlessing: '~ With Love & Blessings ~',
     rsvpText: 'For any queries, please contact',
   },
@@ -59,8 +59,8 @@ const translations = {
     brideParents: 'श्री. पिता का नाम एवं श्रीमती. माता का नाम',
     coupleIntro: 'आपको हमारे परिवार के शुभ विवाह समारोह में सादर आमंत्रित करते हैं',
     saveDate: 'तिथि सुरक्षित करें',
-    monthYear: 'माह वर्ष',
-    dayName: 'दिन',
+    monthYear: 'फरवरी 2026',
+    dayName: 'गुरुवार',
     muhurat: 'शुभ मुहूर्त',
     countdownLabel: 'शुभ दिन की उलटी गिनती',
     days: 'दिन',
@@ -82,7 +82,7 @@ const translations = {
     eventTiming3: 'तिथि एवं समय',
     eventTiming4: 'तिथि एवं समय',
     eventTiming5: 'तिथि एवं समय',
-    eventTiming6: 'तिथि एवं समय',
+    eventTiming6: '20 फरवरी, 2026',
     closingBlessing: '~ स्नेह एवं आशीर्वाद सहित ~',
     rsvpText: 'किसी भी जानकारी के लिए संपर्क करें',
   }
@@ -181,7 +181,7 @@ function initPetals() {
 /* ---- Countdown Timer ---- */
 function initCountdown() {
   // ⚠️ UPDATE THIS DATE to the actual wedding date
-  const weddingDate = new Date('2026-04-15T09:00:00').getTime();
+  const weddingDate = new Date('2026-02-19T09:00:00').getTime();
 
   const daysEl = document.getElementById('countDays');
   const hoursEl = document.getElementById('countHours');
