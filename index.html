@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation — Aditi & Groom</title>
+  <meta name="description" content="You are cordially invited to the wedding ceremony. Join us in celebrating this beautiful union." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Flower Petals -->
+  <div class="petals-container" id="petalsContainer"></div>
+
+  <!-- ====== INVITATION CARD ====== -->
+  <div class="invitation-card" id="invitationCard">
+
+    <!-- Decorative Corner Ornaments -->
+    <div class="corner-ornament corner-tl">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d4a848;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#f0d78c;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <path d="M5,5 Q5,60 60,60 Q5,60 5,115" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <path d="M10,10 Q10,55 55,55" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+        <circle cx="60" cy="60" r="4" fill="url(#goldGrad)" opacity="0.5"/>
+        <path d="M15,5 Q15,45 50,45" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <path d="M5,15 Q45,15 45,50" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="5" cy="5" r="3" fill="url(#goldGrad)" opacity="0.7"/>
+        <circle cx="50" cy="50" r="2" fill="url(#goldGrad)" opacity="0.4"/>
+        <!-- Paisley-like decorative curves -->
+        <path d="M20,8 C25,8 30,12 30,20 C30,28 24,32 20,30 C16,28 14,22 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+        <path d="M8,20 C8,25 12,30 20,30 C28,30 32,24 30,20 C28,16 22,14 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="corner-ornament corner-tr">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5,5 Q5,60 60,60 Q5,60 5,115" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <path d="M10,10 Q10,55 55,55" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+        <circle cx="60" cy="60" r="4" fill="url(#goldGrad)" opacity="0.5"/>
+        <path d="M15,5 Q15,45 50,45" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <path d="M5,15 Q45,15 45,50" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="5" cy="5" r="3" fill="url(#goldGrad)" opacity="0.7"/>
+        <path d="M20,8 C25,8 30,12 30,20 C30,28 24,32 20,30 C16,28 14,22 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+        <path d="M8,20 C8,25 12,30 20,30 C28,30 32,24 30,20 C28,16 22,14 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="corner-ornament corner-bl">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5,5 Q5,60 60,60 Q5,60 5,115" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <path d="M10,10 Q10,55 55,55" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+        <circle cx="60" cy="60" r="4" fill="url(#goldGrad)" opacity="0.5"/>
+        <path d="M15,5 Q15,45 50,45" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <path d="M5,15 Q45,15 45,50" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="5" cy="5" r="3" fill="url(#goldGrad)" opacity="0.7"/>
+        <path d="M20,8 C25,8 30,12 30,20 C30,28 24,32 20,30 C16,28 14,22 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+        <path d="M8,20 C8,25 12,30 20,30 C28,30 32,24 30,20 C28,16 22,14 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="corner-ornament corner-br">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5,5 Q5,60 60,60 Q5,60 5,115" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <path d="M10,10 Q10,55 55,55" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+        <circle cx="60" cy="60" r="4" fill="url(#goldGrad)" opacity="0.5"/>
+        <path d="M15,5 Q15,45 50,45" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <path d="M5,15 Q45,15 45,50" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="5" cy="5" r="3" fill="url(#goldGrad)" opacity="0.7"/>
+        <path d="M20,8 C25,8 30,12 30,20 C30,28 24,32 20,30 C16,28 14,22 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+        <path d="M8,20 C8,25 12,30 20,30 C28,30 32,24 30,20 C28,16 22,14 18,18" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- Rotating Mandala Background -->
+    <div class="mandala-bg mandala-top">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#d4a848" stroke-width="0.5">
+          <circle cx="100" cy="100" r="80"/>
+          <circle cx="100" cy="100" r="60"/>
+          <circle cx="100" cy="100" r="40"/>
+          <circle cx="100" cy="100" r="20"/>
+          <!-- Radial lines -->
+          <line x1="100" y1="20" x2="100" y2="180"/>
+          <line x1="20" y1="100" x2="180" y2="100"/>
+          <line x1="43" y1="43" x2="157" y2="157"/>
+          <line x1="157" y1="43" x2="43" y2="157"/>
+          <!-- Petal shapes -->
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(0 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(45 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(90 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(135 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(180 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(225 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(270 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(315 100 100)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="mandala-bg mandala-bottom">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#d4a848" stroke-width="0.5">
+          <circle cx="100" cy="100" r="80"/>
+          <circle cx="100" cy="100" r="60"/>
+          <circle cx="100" cy="100" r="40"/>
+          <circle cx="100" cy="100" r="20"/>
+          <line x1="100" y1="20" x2="100" y2="180"/>
+          <line x1="20" y1="100" x2="180" y2="100"/>
+          <line x1="43" y1="43" x2="157" y2="157"/>
+          <line x1="157" y1="43" x2="43" y2="157"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(0 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(45 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(90 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(135 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(180 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(225 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(270 100 100)"/>
+          <ellipse cx="100" cy="50" rx="10" ry="20" transform="rotate(315 100 100)"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ====== CARD CONTENT ====== -->
+    <div class="card-inner">
+
+      <!-- ▸ Ganesh / OM Section -->
+      <section class="ganesh-section">
+        <span class="om-symbol">🕉️</span>
+        <div class="ganesh-icon">🙏</div>
+        <p class="ganesh-text">Shree Ganeshaya Namah</p>
+      </section>
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- ▸ Blessing / Sanskrit Shloka -->
+      <section class="blessing-section">
+        <p class="blessing-text">
+          With the blessings of Lord Ganesha &amp; our beloved elders,
+          <br>we cordially invite you to celebrate the auspicious occasion of the marriage of
+          <span class="sanskrit">|| शुभ विवाह ||</span>
+        </p>
+      </section>
+
+      <div class="divider-ornate">
+        <span class="line"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="line"></span>
+      </div>
+
+      <!-- ▸ Groom's Family -->
+      <section class="family-section">
+        <p class="family-intro">Groom's Family</p>
+        <p class="family-name">Shri. Father's Name &amp; Smt. Mother's Name</p>
+        <p class="family-address">Family Address Line 1<br>City, State</p>
+      </section>
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">❖</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- ▸ Bride's Family -->
+      <section class="family-section">
+        <p class="family-intro">Bride's Family</p>
+        <p class="family-name">Shri. Father's Name &amp; Smt. Mother's Name</p>
+        <p class="family-address">Family Address Line 1<br>City, State</p>
+      </section>
+
+      <div class="divider-ornate">
+        <span class="line"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="line"></span>
+      </div>
+
+      <!-- ▸ Couple Names -->
+      <section class="couple-section">
+        <p class="couple-intro">Request the pleasure of your company at the wedding of</p>
+        <div class="couple-names">
+          <div class="person-name">
+            Groom
+            <span class="role-label">The Groom</span>
+          </div>
+          <span class="ampersand">&amp;</span>
+          <div class="person-name">
+            Bride
+            <span class="role-label">The Bride</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">💍</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- ▸ Date & Time -->
+      <section class="event-section">
+        <p class="event-label">Save the Date</p>
+        <div class="event-details-grid">
+          <div class="event-date">
+            <span class="day">DD</span>
+            <span class="month-year">Month YYYY</span>
+          </div>
+          <div class="event-day-name">Day</div>
+          <div class="event-time">
+            <span class="time-text">HH:MM AM</span>
+            <span class="muhurat-label">Shubh Muhurat</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ▸ Countdown Timer -->
+      <section class="countdown-section">
+        <p class="countdown-label">Counting Down To The Big Day</p>
+        <div class="countdown-timer" id="countdownTimer">
+          <div class="countdown-item">
+            <span class="countdown-value" id="countDays">--</span>
+            <span class="countdown-unit">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countHours">--</span>
+            <span class="countdown-unit">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countMinutes">--</span>
+            <span class="countdown-unit">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countSeconds">--</span>
+            <span class="countdown-unit">Seconds</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">✦</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- ▸ Venue -->
+      <section class="venue-section">
+        <p class="venue-label">Wedding Venue</p>
+        <p class="venue-name">Venue Name Here</p>
+        <p class="venue-address">
+          Full Address Line 1,<br>
+          City, State — PIN Code
+        </p>
+        <a href="#" class="map-btn" target="_blank" rel="noopener">
+          📍 View on Map
+        </a>
+      </section>
+
+      <!-- ▸ Events Timeline -->
+      <section class="events-timeline">
+        <p class="timeline-title">Wedding Ceremonies</p>
+        <div class="timeline-events">
+          <div class="timeline-event">
+            <span class="event-icon">🪔</span>
+            <p class="event-name">Haldi</p>
+            <p class="event-timing">Date &amp; Time</p>
+          </div>
+          <div class="timeline-event">
+            <span class="event-icon">🎵</span>
+            <p class="event-name">Sangeet</p>
+            <p class="event-timing">Date &amp; Time</p>
+          </div>
+          <div class="timeline-event">
+            <span class="event-icon">💐</span>
+            <p class="event-name">Baraat</p>
+            <p class="event-timing">Date &amp; Time</p>
+          </div>
+          <div class="timeline-event">
+            <span class="event-icon">🔥</span>
+            <p class="event-name">Pheras</p>
+            <p class="event-timing">Date &amp; Time</p>
+          </div>
+          <div class="timeline-event">
+            <span class="event-icon">🍽️</span>
+            <p class="event-name">Reception</p>
+            <p class="event-timing">Date &amp; Time</p>
+          </div>
+          <div class="timeline-event">
+            <span class="event-icon">👋</span>
+            <p class="event-name">Vidaai</p>
+            <p class="event-timing">Date &amp; Time</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">❖</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- ▸ Closing Message -->
+      <section class="closing-section">
+        <p class="closing-message">
+          Your gracious presence and blessings will make this occasion even more memorable.
+          <br>We look forward to celebrating this joyous occasion with you!
+        </p>
+        <p class="closing-blessing">~ With Love &amp; Blessings ~</p>
+
+        <div class="rsvp-section">
+          <p class="rsvp-text">For any queries, please contact</p>
+          <p class="rsvp-phone">📞 +91 XXXXX XXXXX</p>
+        </div>
+      </section>
+
+    </div>
+    <!-- /card-inner -->
+  </div>
+  <!-- /invitation-card -->
+
+  <!-- Music Toggle Button (placeholder) -->
+  <button class="music-toggle" id="musicToggle" title="Toggle Music">
+    🎶
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
