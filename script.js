@@ -304,7 +304,8 @@ function initShareButton() {
     const shareText = encodeURIComponent(
       '💍 You are cordially invited to the wedding of Shaurabh & Mansi!\n\n' +
       '📅 19th February 2026 (Thursday)\n' +
-      '📍 Siddheshwar Upvan, Machlishahar, Jaunpur\n\n' +
+      '📍 Siddheshwar Upvan, Machlishahar, Jaunpur\n' +
+      '🗺️ Location: https://maps.app.goo.gl/2K3me7ww1zi91XPo8\n\n' +
       '🌟 Open the invitation card:\n' +
       (window.location.href.startsWith('file:') ? 'https://mansi-weds-shaurabh.vercel.app' : window.location.href)
     );
