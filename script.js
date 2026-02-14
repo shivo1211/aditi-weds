@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initPetals();
   initCountdown();
-  initMusicToggle();
+  initShareButton();
   initScrollAnimations();
   initLanguageToggle();
 });
@@ -51,6 +51,9 @@ const translations = {
     monthYear: 'February 2026',
     dayName: 'Thursday',
     muhurat: 'Shubh Muhurat',
+    muhuratTime: 'Evening · Auspicious Hour',
+    calendarBtn: '📅 Add to Calendar',
+    callBtn: 'Call',
     // Countdown
     countdownLabel: 'Counting Down To The Big Day',
     days: 'Days',
@@ -110,6 +113,9 @@ const translations = {
     monthYear: 'फरवरी 2026',
     dayName: 'गुरुवार',
     muhurat: 'शुभ मुहूर्त',
+    muhuratTime: 'संध्या · शुभ समय',
+    calendarBtn: '📅 कैलेंडर में जोड़ें',
+    callBtn: 'कॉल करें',
     // Countdown
     countdownLabel: 'शुभ दिन की उलटी गिनती',
     days: 'दिन',
@@ -141,7 +147,7 @@ const htmlTranslations = {
     groomAddress: 'Gram / Gaur – Maharajganj<br>District – Jaunpur',
     groomName: 'Shaurabh<span class="role-label">The Groom</span>',
     brideName: 'Mansi<span class="role-label">The Bride</span>',
-    venueAddress: 'Machlishahar, Mariyahu Road<br>Jaunpur',
+    venueAddress: 'Machlishahar, Mariyahu Road<br>Jaunpur, Uttar Pradesh',
     hostAddress: 'Gram / Gaur – Shahpur<br>Sikrara, District – Jaunpur',
     closingMsg: 'Your gracious presence and blessings will make this occasion even more memorable.<br>We look forward to celebrating this joyous occasion with you!',
   },
@@ -150,7 +156,7 @@ const htmlTranslations = {
     groomAddress: 'ग्राम / गौर – महाराजगंज<br>जिला – जौनपुर',
     groomName: 'शौरभ<span class="role-label">दूल्हा</span>',
     brideName: 'मानसी<span class="role-label">दुल्हन</span>',
-    venueAddress: 'मछलीशहर, मरियाहू रोड<br>जौनपुर',
+    venueAddress: 'मछलीशहर, मरियाहू रोड<br>जौनपुर, उत्तर प्रदेश',
     hostAddress: 'ग्राम / गौर – शाहपुर<br>सिकरारा, जिला – जौनपुर',
     closingMsg: 'आपकी शुभ उपस्थिति एवं आशीर्वाद इस अवसर को और भी यादगार बना देंगे।<br>हम इस शुभ अवसर को आपके साथ मनाने के लिए उत्सुक हैं!',
   }
@@ -204,8 +210,11 @@ function initPetals() {
     const petal = document.createElement('span');
     petal.classList.add('petal');
     petal.textContent = petalSymbols[Math.floor(Math.random() * petalSymbols.length)];
+    const swayAnims = ['petalFall', 'petalSway1', 'petalSway2', 'petalSway3'];
+    const chosenAnim = swayAnims[Math.floor(Math.random() * swayAnims.length)];
     petal.style.left = Math.random() * 100 + 'vw';
     petal.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+    petal.style.animationName = chosenAnim;
     petal.style.animationDuration = (8 + Math.random() * 12) + 's';
     petal.style.animationDelay = Math.random() * 5 + 's';
     petal.style.opacity = 0.3 + Math.random() * 0.4;
@@ -222,6 +231,34 @@ function initPetals() {
     setTimeout(() => createPetal(), i * 600);
   }
 }
+
+/* Petal sway variations injected into page */
+(function injectPetalStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes petalSway1 {
+      0%   { transform: translateY(-10vh) rotate(0deg) translateX(0);     opacity: 0.7; }
+      25%  { transform: translateY(25vh) rotate(72deg) translateX(40px);  opacity: 0.6; }
+      50%  { transform: translateY(50vh) rotate(144deg) translateX(-30px); opacity: 0.5; }
+      75%  { transform: translateY(75vh) rotate(252deg) translateX(35px); opacity: 0.35; }
+      100% { transform: translateY(110vh) rotate(360deg) translateX(-15px); opacity: 0; }
+    }
+    @keyframes petalSway2 {
+      0%   { transform: translateY(-10vh) rotate(0deg) translateX(0);     opacity: 0.6; }
+      30%  { transform: translateY(30vh) rotate(108deg) translateX(-35px); opacity: 0.55; }
+      60%  { transform: translateY(60vh) rotate(216deg) translateX(25px); opacity: 0.4; }
+      100% { transform: translateY(110vh) rotate(360deg) translateX(10px); opacity: 0; }
+    }
+    @keyframes petalSway3 {
+      0%   { transform: translateY(-10vh) rotate(0deg) translateX(0);     opacity: 0.65; }
+      20%  { transform: translateY(20vh) rotate(60deg) translateX(50px);  opacity: 0.6; }
+      50%  { transform: translateY(50vh) rotate(180deg) translateX(-40px); opacity: 0.45; }
+      80%  { transform: translateY(80vh) rotate(300deg) translateX(20px); opacity: 0.3; }
+      100% { transform: translateY(110vh) rotate(360deg) translateX(-5px); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+})();
 
 /* ---- Countdown Timer ---- */
 function initCountdown() {
@@ -259,15 +296,19 @@ function initCountdown() {
   setInterval(updateCountdown, 1000);
 }
 
-/* ---- Music Toggle (Placeholder) ---- */
-function initMusicToggle() {
-  const btn = document.getElementById('musicToggle');
-  let playing = false;
+/* ---- Share on WhatsApp ---- */
+function initShareButton() {
+  const btn = document.getElementById('shareBtn');
 
   btn.addEventListener('click', () => {
-    playing = !playing;
-    btn.classList.toggle('playing', playing);
-    btn.textContent = playing ? '🔊' : '🎶';
+    const shareText = encodeURIComponent(
+      '💍 You are cordially invited to the wedding of Shaurabh & Mansi!\n\n' +
+      '📅 19th February 2026 (Thursday)\n' +
+      '📍 Siddheshwar Upvan, Machlishahar, Jaunpur\n\n' +
+      '🌟 Open the invitation card:\n' +
+      (window.location.href.startsWith('file:') ? 'https://mansi-weds-shaurabh.vercel.app' : window.location.href)
+    );
+    window.open('https://wa.me/?text=' + shareText, '_blank');
   });
 }
 
